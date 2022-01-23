@@ -4,9 +4,11 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
+import AddIcon from '@mui/icons-material/Add';
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
 
 export const SidebarMenu = () => {
   const [state, setState] = React.useState(false);
@@ -34,12 +36,14 @@ export const SidebarMenu = () => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        <ListItem button>
+        <StyledListItem>
+          <HomeIcon />
           <SidebarMenuLink to='/'>Home</SidebarMenuLink>
-        </ListItem>
-        <ListItem button>
+        </StyledListItem>
+        <StyledListItem>
+          <AddIcon />
           <SidebarMenuLink to='/create-user'>Create user</SidebarMenuLink>
-        </ListItem>
+        </StyledListItem>
       </List>
     </Box>
   );
@@ -60,6 +64,12 @@ export const SidebarMenu = () => {
     </div>
   );
 }
+
+const StyledListItem = styled(ListItem)(() => ({
+  display: 'flex',
+  alignItems: 'center',
+  gap: 5,
+}));
 
 const SidebarMenuLink = styled(Link)(() => ({
   color: '#000',
