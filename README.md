@@ -1,6 +1,6 @@
 # Test task: User-management
 
-[DEMO LINK](https://lilia-kuleba.github.io/templater-email/)
+[DEMO LINK](https://vitalikstrog.github.io/user-management/)
 
 ## Task
 
